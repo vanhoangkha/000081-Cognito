@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
   <url>
     <loc>/1-preparation/</loc>
     <xhtml:link
@@ -13,7 +14,9 @@
                 hreflang="en"
                 href="/1-preparation/"
                 />
-  </url><url>
+  </url>
+  
+  <url>
     <loc>/</loc>
     <xhtml:link
                 rel="alternate"
@@ -25,7 +28,9 @@
                 hreflang="en"
                 href="/"
                 />
-  </url><url>
+  </url>
+  
+  <url>
     <loc>/2-create-user-pool/</loc>
     <xhtml:link
                 rel="alternate"
@@ -37,7 +42,9 @@
                 hreflang="en"
                 href="/2-create-user-pool/"
                 />
-  </url><url>
+  </url>
+  
+  <url>
     <loc>/3-create-api-and-lambda-function/</loc>
     <xhtml:link
                 rel="alternate"
@@ -49,7 +56,9 @@
                 hreflang="en"
                 href="/3-create-api-and-lambda-function/"
                 />
-  </url><url>
+  </url>
+  
+  <url>
     <loc>/4-test-front-end/</loc>
     <xhtml:link
                 rel="alternate"
@@ -61,7 +70,9 @@
                 hreflang="en"
                 href="/4-test-front-end/"
                 />
-  </url><url>
+  </url>
+  
+  <url>
     <loc>/5-cleanup/</loc>
     <xhtml:link
                 rel="alternate"
@@ -73,7 +84,9 @@
                 hreflang="en"
                 href="/5-cleanup/"
                 />
-  </url><url>
+  </url>
+  
+  <url>
     <loc>/categories/</loc>
     <xhtml:link
                 rel="alternate"
@@ -85,7 +98,9 @@
                 hreflang="en"
                 href="/categories/"
                 />
-  </url><url>
+  </url>
+  
+  <url>
     <loc>/tags/</loc>
     <xhtml:link
                 rel="alternate"
@@ -98,4 +113,5 @@
                 href="/tags/"
                 />
   </url>
+  
 </urlset>
