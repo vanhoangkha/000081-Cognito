@@ -32,7 +32,7 @@ sam deploy --guided
 - Open a terminal on your computer in the folder where you want to save the source code
 - Copy the below command
 ```
-git clone https://github.com/PhamTHHanh/fcj-serverless-frontend.git
+git clone https://github.com/AWS-First-Cloud-Journey/FCJ-Serverless-Workshop.git
 cd fcj-serverless-frontend
 yarn build
 ```

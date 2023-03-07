@@ -4,10 +4,6 @@
     <title>Test with front-end on AWS System Manager</title>
     <link>/4-test-front-end/</link>
     <description>Recent content in Test with front-end on AWS System Manager</description>
-    <generator>Hugo -- gohugo.io</generator>
-    
-	<atom:link href="/4-test-front-end/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <generator>Hugo -- gohugo.io</generator><atom:link href="/4-test-front-end/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.69.0" />
+    <meta name="generator" content="Hugo 0.101.0" />
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
@@ -12,21 +12,21 @@
     <title>Create API and Lambda function :: AWS System Manager</title>
 
     
-    <link href="/css/nucleus.css?1676529219" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1676529219" rel="stylesheet">
-    <link href="/css/hybrid.css?1676529219" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1676529219" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1676529219" rel="stylesheet">
-    <link href="/css/auto-complete.css?1676529219" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1676529219" rel="stylesheet">
-    <link href="/css/theme.css?1676529219" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1676529219" rel="stylesheet">
+    <link href="/css/nucleus.css?1678184369" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1678184369" rel="stylesheet">
+    <link href="/css/hybrid.css?1678184369" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1678184369" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1678184369" rel="stylesheet">
+    <link href="/css/auto-complete.css?1678184369" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1678184369" rel="stylesheet">
+    <link href="/css/theme.css?1678184369" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1678184369" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1676529219" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1678184369" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1676529219"></script>
+    <script src="/js/jquery-3.3.1.min.js?1678184369"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1676529219"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1676529219"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1678184369"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1678184369"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1676529219"></script>
+<script type="text/javascript" src="/js/search.js?1678184369"></script>
 
     
   </div>
@@ -291,7 +291,7 @@
     <br>
     <br>
         <b> Last Updated </b> <br>
-        <i><font color=orange>16-2-2023</font></i>
+        <i><font color=orange>07-3-2023</font></i>
     </left>
     <left>
         <br>
@@ -382,7 +382,7 @@
 <li>Add the following script under the <strong>LambdaInvokePermission</strong></li>
 <li>Replace all <strong>APP_INTERGATION</strong> with <strong>CLIENT_ID</strong> which recorded from the previous step</li>
 </ul>
-<pre><code>  Login:
+<pre tabindex="0"><code>  Login:
     Type: AWS::Serverless::Function
     Properties:
       FunctionName: login
@@ -393,7 +393,7 @@
         - x86_64
       Environment:
         Variables:
-          CLIENT_ID: &quot;APP_INTERGATION&quot;
+          CLIENT_ID: &#34;APP_INTERGATION&#34;
 
   Register:
     Type: AWS::Serverless::Function
@@ -406,7 +406,7 @@
         - x86_64
       Environment:
         Variables:
-          CLIENT_ID: &quot;APP_INTERGATION&quot;
+          CLIENT_ID: &#34;APP_INTERGATION&#34;
 
   ConfirmUser:
     Type: AWS::Serverless::Function
@@ -419,12 +419,12 @@
         - x86_64
       Environment:
         Variables:
-          CLIENT_ID: &quot;APP_INTERGATION&quot;
+          CLIENT_ID: &#34;APP_INTERGATION&#34;
 </code></pre><p><img src="/images/3-deploy-api-and-lambda/3-deploy-api-and-lambda-1.png?featherlight=false&amp;width=90pc" alt="DeployFunction"></p>
 <ol start="2">
 <li>The directory structure is as follows:</li>
 </ol>
-<pre><code>fcj-book-store-sam-ws3
+<pre tabindex="0"><code>fcj-book-store-sam-ws3
 ├── fcj-book-store
 │   ├── login
 │   │   └── login.py
@@ -439,21 +439,21 @@
 <li>Create <strong>login</strong> folder in <strong>fcj-book-store-sam-ws3/fcj-book-store/</strong> folder</li>
 <li>Create <strong>login.py</strong> file and copy the following code to it</li>
 </ul>
-<pre><code>import json
+<pre tabindex="0"><code>import json
 import boto3
 import botocore.exceptions
 import os
 
 
-client = boto3.client('cognito-idp')
+client = boto3.client(&#39;cognito-idp&#39;)
 def initiate_auth(client_id, username, password):
     try:
         response = client.initiate_auth(
-            AuthFlow='USER_PASSWORD_AUTH',
+            AuthFlow=&#39;USER_PASSWORD_AUTH&#39;,
             ClientId=client_id,
             AuthParameters={
-                &quot;USERNAME&quot;: username,
-                &quot;PASSWORD&quot;: password,
+                &#34;USERNAME&#34;: username,
+                &#34;PASSWORD&#34;: password,
             }
         )
         print(response)
@@ -464,186 +464,186 @@ def initiate_auth(client_id, username, password):
     return response, None
 
 def lambda_handler(event, context):
-    user_infor = json.loads(event['body'])
-    error = &quot;&quot;
-    message = &quot;&quot;
-    client_id = os.getenv(&quot;CLIENT_ID&quot;)
+    user_infor = json.loads(event[&#39;body&#39;])
+    error = &#34;&#34;
+    message = &#34;&#34;
+    client_id = os.getenv(&#34;CLIENT_ID&#34;)
     
         
-    resp, msg = initiate_auth(client_id, user_infor['username'], user_infor['password'])
+    resp, msg = initiate_auth(client_id, user_infor[&#39;username&#39;], user_infor[&#39;password&#39;])
     print(resp)
     
     if msg is not None:
-        message = &quot;Login fail!&quot;
+        message = &#34;Login fail!&#34;
         statusCode = 400
-    elif resp[&quot;AuthenticationResult&quot;]:
-         message = &quot;Login sccessful!&quot;
+    elif resp[&#34;AuthenticationResult&#34;]:
+         message = &#34;Login sccessful!&#34;
          statusCode = 200
     else:
-        message = &quot;Login fail!&quot;
+        message = &#34;Login fail!&#34;
         statusCode = 400
 
 
     # TODO implement
     return {
-            'statusCode': statusCode,
-            'body': message,
-            'headers': {
-                'Content-Type': 'application/json',
-                &quot;Access-Control-Allow-Headers&quot;: &quot;Access-Control-Allow-Headers, Origin, Accept, X-Requested-With, Content-Type, Access-Control-Request-Method,X-Access-Token, XKey, Authorization&quot;,
-                &quot;Access-Control-Allow-Origin&quot;: &quot;*&quot;,
-                &quot;Access-Control-Allow-Methods&quot;: &quot;GET,PUT,POST,DELETE,OPTIONS&quot;
+            &#39;statusCode&#39;: statusCode,
+            &#39;body&#39;: message,
+            &#39;headers&#39;: {
+                &#39;Content-Type&#39;: &#39;application/json&#39;,
+                &#34;Access-Control-Allow-Headers&#34;: &#34;Access-Control-Allow-Headers, Origin, Accept, X-Requested-With, Content-Type, Access-Control-Request-Method,X-Access-Token, XKey, Authorization&#34;,
+                &#34;Access-Control-Allow-Origin&#34;: &#34;*&#34;,
+                &#34;Access-Control-Allow-Methods&#34;: &#34;GET,PUT,POST,DELETE,OPTIONS&#34;
             }
     }
 </code></pre><ul>
 <li>Create <strong>register</strong> folder in <strong>fcj-book-store-sam-ws3/fcj-book-store/</strong> folder</li>
 <li>Create <strong>register.py</strong> file and copy the following code to it</li>
 </ul>
-<pre><code>import json
+<pre tabindex="0"><code>import json
 import boto3
 import os
 
-client = boto3.client('cognito-idp')
+client = boto3.client(&#39;cognito-idp&#39;)
 
 def lambda_handler(event, context):
-    user_infor = json.loads(event['body'])
-    client_id = os.getenv(&quot;CLIENT_ID&quot;)
+    user_infor = json.loads(event[&#39;body&#39;])
+    client_id = os.getenv(&#34;CLIENT_ID&#34;)
     error = None
     try:
         resp = client.sign_up(
             ClientId=client_id,
-            Username=user_infor['username'],
-            Password=user_infor['password']
+            Username=user_infor[&#39;username&#39;],
+            Password=user_infor[&#39;password&#39;]
             )
     
     except Exception as e:
         error = e.__str__()
         
     if error is None:
-        message = &quot;Register successful!&quot;
+        message = &#34;Register successful!&#34;
         statusCode = 200
     else:
-        message = &quot;Register fail!&quot;
+        message = &#34;Register fail!&#34;
         statusCode = 400
         print(error)
         
     # TODO implement
     return {
-            'statusCode': statusCode,
-            'body': message,
-            'headers': {
-                'Content-Type': 'application/json',
-                &quot;Access-Control-Allow-Headers&quot;: &quot;Access-Control-Allow-Headers, Origin, Accept, X-Requested-With, Content-Type, Access-Control-Request-Method,X-Access-Token, XKey, Authorization&quot;,
-                &quot;Access-Control-Allow-Origin&quot;: &quot;*&quot;,
-                &quot;Access-Control-Allow-Methods&quot;: &quot;GET,PUT,POST,DELETE,OPTIONS&quot;
+            &#39;statusCode&#39;: statusCode,
+            &#39;body&#39;: message,
+            &#39;headers&#39;: {
+                &#39;Content-Type&#39;: &#39;application/json&#39;,
+                &#34;Access-Control-Allow-Headers&#34;: &#34;Access-Control-Allow-Headers, Origin, Accept, X-Requested-With, Content-Type, Access-Control-Request-Method,X-Access-Token, XKey, Authorization&#34;,
+                &#34;Access-Control-Allow-Origin&#34;: &#34;*&#34;,
+                &#34;Access-Control-Allow-Methods&#34;: &#34;GET,PUT,POST,DELETE,OPTIONS&#34;
             },
     }
 </code></pre><ul>
 <li>Create <strong>confirm_user</strong> folder in <strong>fcj-book-store-sam-ws3/fcj-book-store/</strong> folder</li>
 <li>Create <strong>confirm_user.py</strong> file and copy the following code to it</li>
 </ul>
-<pre><code>import json
+<pre tabindex="0"><code>import json
 import boto3
 import os
 
-client = boto3.client('cognito-idp')
+client = boto3.client(&#39;cognito-idp&#39;)
 
 def lambda_handler(event, context):
-    user_infor = json.loads(event['body'])
-    client_id = os.getenv(&quot;CLIENT_ID&quot;)
-    user_pool_id = os.getenv(&quot;USER_POOL_ID&quot;)
+    user_infor = json.loads(event[&#39;body&#39;])
+    client_id = os.getenv(&#34;CLIENT_ID&#34;)
+    user_pool_id = os.getenv(&#34;USER_POOL_ID&#34;)
     error = None
     try:
         resp = client.confirm_sign_up(
             ClientId=client_id,
-            Username=user_infor['username'],
-            ConfirmationCode=user_infor['code']
+            Username=user_infor[&#39;username&#39;],
+            ConfirmationCode=user_infor[&#39;code&#39;]
             )
     except Exception as e:
         error = e.__str__()
         
     if error is None:
-        message = &quot;Confirm successful!&quot;
+        message = &#34;Confirm successful!&#34;
         statusCode = 200
     else:
-        message = &quot;Confirm fail!&quot;
+        message = &#34;Confirm fail!&#34;
         statusCode = 400
         print(error)
         
     # TODO implement
     return {
-            'statusCode': statusCode,
-            'body': message,
-            'headers': {
-                'Content-Type': 'application/json',
-                &quot;Access-Control-Allow-Headers&quot;: &quot;Access-Control-Allow-Headers, Origin, Accept, X-Requested-With, Content-Type, Access-Control-Request-Method,X-Access-Token, XKey, Authorization&quot;,
-                &quot;Access-Control-Allow-Origin&quot;: &quot;*&quot;,
-                &quot;Access-Control-Allow-Methods&quot;: &quot;GET,PUT,POST,DELETE,OPTIONS&quot;
+            &#39;statusCode&#39;: statusCode,
+            &#39;body&#39;: message,
+            &#39;headers&#39;: {
+                &#39;Content-Type&#39;: &#39;application/json&#39;,
+                &#34;Access-Control-Allow-Headers&#34;: &#34;Access-Control-Allow-Headers, Origin, Accept, X-Requested-With, Content-Type, Access-Control-Request-Method,X-Access-Token, XKey, Authorization&#34;,
+                &#34;Access-Control-Allow-Origin&#34;: &#34;*&#34;,
+                &#34;Access-Control-Allow-Methods&#34;: &#34;GET,PUT,POST,DELETE,OPTIONS&#34;
             },
     }
 </code></pre><ol start="3">
 <li>Run the below commands:</li>
 </ol>
-<pre><code>sam build
+<pre tabindex="0"><code>sam build
 sam deploy --guided
 </code></pre><p><img src="/images/3-deploy-api-and-lambda/3-deploy-api-and-lambda-2.png?featherlight=false&amp;width=90pc" alt="DeployFunction"></p>
 <ol start="4">
 <li>Add the following script under the <strong>delete</strong> method of <strong>BookApi</strong></li>
 </ol>
-<pre><code>          /login:
+<pre tabindex="0"><code>          /login:
             post:
               responses:
-                &quot;200&quot;:
+                &#34;200&#34;:
                   description: 200 response
                   headers:
                     Access-Control-Allow-Origin:
                       type: string
               x-amazon-apigateway-integration:
                 uri:
-                  Fn::Sub: &quot;arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${Login.Arn}/invocations&quot;
+                  Fn::Sub: &#34;arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${Login.Arn}/invocations&#34;
                 responses:
                   default:
                     statusCode: 200
                     responseParameters:
-                      method.response.header.Access-Control-Allow-Origin: &quot;'*'&quot;
+                      method.response.header.Access-Control-Allow-Origin: &#34;&#39;*&#39;&#34;
                 passthroughBehavior: when_no_match
                 httpMethod: POST #always POST
                 type: aws_proxy
           /register:
             post:
               responses:
-                &quot;200&quot;:
+                &#34;200&#34;:
                   description: 200 response
                   headers:
                     Access-Control-Allow-Origin:
                       type: string
               x-amazon-apigateway-integration:
                 uri:
-                  Fn::Sub: &quot;arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${Register.Arn}/invocations&quot;
+                  Fn::Sub: &#34;arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${Register.Arn}/invocations&#34;
                 responses:
                   default:
                     statusCode: 200
                     responseParameters:
-                      method.response.header.Access-Control-Allow-Origin: &quot;'*'&quot;
+                      method.response.header.Access-Control-Allow-Origin: &#34;&#39;*&#39;&#34;
                 passthroughBehavior: when_no_match
                 httpMethod: POST #always POST
                 type: aws_proxy
           /confirm_user:
             post:
               responses:
-                &quot;200&quot;:
+                &#34;200&#34;:
                   description: 200 response
                   headers:
                     Access-Control-Allow-Origin:
                       type: string
               x-amazon-apigateway-integration:
                 uri:
-                  Fn::Sub: &quot;arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${ConfirmUser.Arn}/invocations&quot;
+                  Fn::Sub: &#34;arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${ConfirmUser.Arn}/invocations&#34;
                 responses:
                   default:
                     statusCode: 200
                     responseParameters:
-                      method.response.header.Access-Control-Allow-Origin: &quot;'*'&quot;
+                      method.response.header.Access-Control-Allow-Origin: &#34;&#39;*&#39;&#34;
                 passthroughBehavior: when_no_match
                 httpMethod: POST #always POST
                 type: aws_proxy
@@ -652,7 +652,7 @@ sam deploy --guided
 <ol start="5">
 <li>Add the following script under the <strong>Login</strong> function</li>
 </ol>
-<pre><code>      Events:
+<pre tabindex="0"><code>      Events:
         Login:
           Type: Api
           Properties:
@@ -664,7 +664,7 @@ sam deploy --guided
 <ul>
 <li>Add the following script under the <strong>Register</strong> function</li>
 </ul>
-<pre><code>      Events:
+<pre tabindex="0"><code>      Events:
         Register:
           Type: Api
           Properties:
@@ -676,7 +676,7 @@ sam deploy --guided
 <ul>
 <li>Add the following script under the <strong>ConfirmUser</strong> function</li>
 </ul>
-<pre><code>      Events:
+<pre tabindex="0"><code>      Events:
         ConfirmUser:
           Type: Api
           Properties:
@@ -688,7 +688,7 @@ sam deploy --guided
 <ol start="6">
 <li>Run the below commands:</li>
 </ol>
-<pre><code>sam build
+<pre tabindex="0"><code>sam build
 sam deploy --guided
 </code></pre><ul>
 <li>Enter &ldquo;y&rdquo; if asked &ldquo;Login may not have authorization defined, Is this okay? [y/N]: &quot;</li>
@@ -841,19 +841,19 @@ sam deploy --guided
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1676529219"></script>
-    <script src="/js/perfect-scrollbar.min.js?1676529219"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1676529219"></script>
-    <script src="/js/jquery.sticky.js?1676529219"></script>
-    <script src="/js/featherlight.min.js?1676529219"></script>
-    <script src="/js/highlight.pack.js?1676529219"></script>
+    <script src="/js/clipboard.min.js?1678184369"></script>
+    <script src="/js/perfect-scrollbar.min.js?1678184369"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1678184369"></script>
+    <script src="/js/jquery.sticky.js?1678184369"></script>
+    <script src="/js/featherlight.min.js?1678184369"></script>
+    <script src="/js/highlight.pack.js?1678184369"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1676529219"></script>
-    <script src="/js/learn.js?1676529219"></script>
-    <script src="/js/hugo-learn.js?1676529219"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1678184369"></script>
+    <script src="/js/learn.js?1678184369"></script>
+    <script src="/js/hugo-learn.js?1678184369"></script>
 
-    <link href="/mermaid/mermaid.css?1676529219" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1676529219"></script>
+    <link href="/mermaid/mermaid.css?1678184369" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1678184369"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
