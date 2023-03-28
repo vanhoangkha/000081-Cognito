@@ -15,7 +15,7 @@ We will try registration and login from web application to test API Gateway, Lam
 
 ![UpdateSource](/images/4-test-front-end/4-test-front-end-1.png?featherlight=false&width=90pc)
 
-3. Open **config.js** file in source code folder of application - **fcj-serverless-frontend**
+3. Open **config.js** file in source code folder of application - **FCJ-Serverless-Workshop**
 - Replace **APP_API_URL** with **InvokeURL**
 
 ![UpdateSource](/images/4-test-front-end/4-test-front-end-2.png?featherlight=false&width=90pc)

@@ -15,7 +15,7 @@ Chúng ta sẽ thử đăng ký và đăng nhập từ ứng dụng web để ki
 
 ![UpdateSource](/images/4-test-front-end/4-test-front-end-1.png?featherlight=false&width=90pc)
 
-3. Mở tệp **config.js** trong thư mục source code của ứng dụng - **fcj-serverless-frontend**
+3. Mở tệp **config.js** trong thư mục source code của ứng dụng - **FCJ-Serverless-Workshop**
 - Thay **APP_API_URL** bằng **InvokeURL**
 
 ![UpdateSource](/images/4-test-front-end/4-test-front-end-2.png?featherlight=false&width=90pc)
