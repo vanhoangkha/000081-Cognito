@@ -16,6 +16,10 @@ sam build
 sam deploy --guided
 ```
 
+{{% notice note %}}
+You should install python3.9 because the lambda function uses python3.9
+{{% /notice %}}
+
 3. Enter the following content:
 
 - Stack Name []: `fcj-book-store`
@@ -34,6 +38,9 @@ sam deploy --guided
 ```
 git clone https://github.com/AWS-First-Cloud-Journey/FCJ-Serverless-Workshop.git
 cd FCJ-Serverless-Workshop
+npm install
+npm install --global yarn
+yarn build
 ```
 5. We have finished building the front-end. Next execute the following command to upload the **build** folder to S3
 ```

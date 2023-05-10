@@ -16,6 +16,10 @@ sam build
 sam deploy --guided
 ```
 
+{{% notice note %}}
+Bạn nên cài đặt python3.9 vì các hàm lambda sử dụng python3.9
+{{% /notice %}}
+
 3. Nhập nội dung như sau:
 
 - Stack Name []: `fcj-book-store`
@@ -34,6 +38,8 @@ Save arguments to configuration file [Y/n]: y
 ```
 git clone https://github.com/AWS-First-Cloud-Journey/FCJ-Serverless-Workshop.git
 cd FCJ-Serverless-Workshop
+npm install
+npm install --global yarn
 yarn build
 ```
 5. Chúng ta đã build xong front-end. Tiếp theo thực hiện câu lệnh sau để tải thư mục **build** lên S3
