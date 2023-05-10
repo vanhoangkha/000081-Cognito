@@ -28,13 +28,12 @@ sam deploy --guided
 - BookDelete may not have authorization defined, Is this okay? [y/N]: y
 - Save arguments to configuration file [Y/n]: y
 
-4. Download the **fcj-serverless-frontend** code to your device
+4. Download the **FCJ-Serverless-Workshop** code to your device
 - Open a terminal on your computer in the folder where you want to save the source code
 - Copy the below command
 ```
 git clone https://github.com/AWS-First-Cloud-Journey/FCJ-Serverless-Workshop.git
-cd fcj-serverless-frontend
-yarn build
+cd FCJ-Serverless-Workshop
 ```
 5. We have finished building the front-end. Next execute the following command to upload the **build** folder to S3
 ```

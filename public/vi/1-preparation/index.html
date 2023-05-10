@@ -9,24 +9,24 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Chuẩn bị :: AWS System Manager</title>
+    <title>Chuẩn bị :: SERVERLESS - XÁC THỰC VỚI AMAZON COGNITO</title>
 
     
-    <link href="/css/nucleus.css?1683700444" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1683700444" rel="stylesheet">
-    <link href="/css/hybrid.css?1683700444" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1683700444" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1683700444" rel="stylesheet">
-    <link href="/css/auto-complete.css?1683700444" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1683700444" rel="stylesheet">
-    <link href="/css/theme.css?1683700444" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1683700444" rel="stylesheet">
+    <link href="/css/nucleus.css?1683700866" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1683700866" rel="stylesheet">
+    <link href="/css/hybrid.css?1683700866" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1683700866" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1683700866" rel="stylesheet">
+    <link href="/css/auto-complete.css?1683700866" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1683700866" rel="stylesheet">
+    <link href="/css/theme.css?1683700866" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1683700866" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1683700444" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1683700866" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1683700444"></script>
+    <script src="/js/jquery-3.3.1.min.js?1683700866"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1683700444"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1683700444"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1683700866"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1683700866"></script>
 <script type="text/javascript">
     
         var baseurl = "\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1683700444"></script>
+<script type="text/javascript" src="/js/search.js?1683700866"></script>
 
     
   </div>
@@ -214,7 +214,11 @@
         <ul>
           
               <li> 
-                  <a class="padding" href="https://www.facebook.com/groups/awsstudygroupfcj/"><i class='fab fa-facebook'></i> AWS Study Group</a>
+                  <a class="padding" href="http://awsstudygroup.com"><i class='fab fa-aws'></i> AWS Study Group - Blog</a>
+              </li>
+          
+              <li> 
+                  <a class="padding" href="https://www.facebook.com/groups/awsstudygroupfcj"><i class='fab fa-facebook'></i> AWS Study Group - Nhóm FB</a>
               </li>
           
         </ul>
@@ -291,7 +295,11 @@
     <br>
     <br>
         <b> Last Updated </b> <br>
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
         <i><font color=orange>07-3-2023</font></i>
+=======
+        <i><font color=orange>01-05-2023</font></i>
+>>>>>>> 26a53cfacabbb3ce9b2e57c5d03b1858fc7d939c
     </left>
     <left>
         <br>
@@ -431,14 +439,14 @@ sam deploy --guided
 Save arguments to configuration file [Y/n]: y</li>
 </ul>
 <ol start="4">
-<li>Tải code <strong>fcj-serverless-frontend</strong> về máy của bạn</li>
+<li>Tải code <strong>FCJ-Serverless-Workshop</strong> về máy của bạn</li>
 </ol>
 <ul>
 <li>Mở terminal trên máy bạn tại thư mục bạn muốn lưu source code</li>
 <li>Sao chép câu lệnh dưới đây</li>
 </ul>
 <pre tabindex="0"><code>git clone https://github.com/AWS-First-Cloud-Journey/FCJ-Serverless-Workshop.git
-cd fcj-serverless-frontend
+cd FCJ-Serverless-Workshop
 yarn build
 </code></pre><ol start="5">
 <li>Chúng ta đã build xong front-end. Tiếp theo thực hiện câu lệnh sau để tải thư mục <strong>build</strong> lên S3</li>
@@ -586,19 +594,19 @@ yarn build
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1683700444"></script>
-    <script src="/js/perfect-scrollbar.min.js?1683700444"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1683700444"></script>
-    <script src="/js/jquery.sticky.js?1683700444"></script>
-    <script src="/js/featherlight.min.js?1683700444"></script>
-    <script src="/js/highlight.pack.js?1683700444"></script>
+    <script src="/js/clipboard.min.js?1683700866"></script>
+    <script src="/js/perfect-scrollbar.min.js?1683700866"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1683700866"></script>
+    <script src="/js/jquery.sticky.js?1683700866"></script>
+    <script src="/js/featherlight.min.js?1683700866"></script>
+    <script src="/js/highlight.pack.js?1683700866"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1683700444"></script>
-    <script src="/js/learn.js?1683700444"></script>
-    <script src="/js/hugo-learn.js?1683700444"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1683700866"></script>
+    <script src="/js/learn.js?1683700866"></script>
+    <script src="/js/hugo-learn.js?1683700866"></script>
 
-    <link href="/mermaid/mermaid.css?1683700444" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1683700444"></script>
+    <link href="/mermaid/mermaid.css?1683700866" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1683700866"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
